@@ -28,8 +28,7 @@ fig.update_layout(
 fig.show()
 st.plotly_chart(fig)
 
-# Interactive widget to select the variable
-variable = st.selectbox("Select a variable to plot", options=ire_df.columns[2:], index=0)
+
 
 ire_df = df[df['Country']=='Ireland']
 
@@ -37,8 +36,8 @@ ire_df = df[df['Country']=='Ireland']
 fig_trend = px.line(
     ire_df,
     x="Year",
-    y=variable,
-    title=f"{variable} in Ireland from 2013-2022",
+    y="%_area_under_organic_farming",
+    title=f"UAA organic farming in Ireland from 2013-2022",
     labels={"Year": "Year", variable: variable},
     height=600,
 )
