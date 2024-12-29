@@ -31,6 +31,8 @@ st.plotly_chart(fig)
 # Interactive widget to select the variable
 variable = st.selectbox("Select a variable to plot", options=ire_df.columns[2:], index=0)
 
+ire_df = df[df['Country']=='Ireland']
+
 # Create the trendline chart
 fig_trend = px.line(
     ire_df,
