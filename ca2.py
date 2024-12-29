@@ -27,3 +27,18 @@ fig.update_layout(
     geo_scope="europe")
 fig.show()
 st.plotly_chart(fig)
+
+# Interactive widget to select the variable
+variable = st.selectbox("Select a variable to plot", options=ire_df.columns[2:], index=0)
+
+# Create the trendline chart
+fig_trend = px.line(
+    ire_df,
+    x="Year",
+    y=variable,
+    title=f"{variable} in Ireland from 2013-2022",
+    labels={"Year": "Year", variable: variable},
+    height=600,
+)
+fig_trend.update_traces(mode="lines+markers")
+st.plotly_chart(fig_trend)
