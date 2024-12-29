@@ -26,3 +26,4 @@ fig.update_layout(
     title_text="% UAA under organic agriculture 2013-2022",
     geo_scope="europe")
 fig.show()
+st.plotly_chart(fig)
